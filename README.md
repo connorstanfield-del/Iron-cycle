@@ -24,6 +24,26 @@ npm run build
 
 Output goes to `dist/`. You can preview the production build with `npm run preview`.
 
+## Project structure
+
+All source files sit flat in the project root (`index.html`, `main.jsx`,
+`App.jsx`, `index.css`, `package.json`, `vite.config.js`) — no `src/`
+subfolder, so you can drag-and-drop or use "Add file → Upload files" on
+GitHub.com without needing to create folders yourself.
+
+The one exception is `.github/workflows/deploy.yml`, which **must** live at
+that exact nested path — GitHub only looks for workflow files there, so this
+can't be flattened. If your upload method doesn't support folders, the
+easiest way to create it is on GitHub.com itself:
+
+1. In your repo, click **Add file → Create new file**.
+2. In the filename box, type the whole path: `.github/workflows/deploy.yml`
+   (GitHub creates both folders automatically as you type the slashes).
+3. Paste in the contents of `deploy.yml` from this project and commit.
+
+If you'd rather skip GitHub Actions entirely, you can deploy manually instead
+— see the section below.
+
 ## Deploy to GitHub Pages
 
 This repo includes a GitHub Actions workflow (`.github/workflows/deploy.yml`)
